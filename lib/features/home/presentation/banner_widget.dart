@@ -51,32 +51,6 @@ class BannerWidget extends StatelessWidget {
                           ),
                         ],
                       ),
-                      Positioned(
-                        bottom: -30,
-                        left: 0,
-                        right: 0,
-                        child: Container(
-                          height: 128,
-                          decoration: const BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.only(
-                                  topLeft: Radius.circular(12),
-                                  topRight: Radius.circular(12)),
-                              boxShadow: [
-                                BoxShadow(
-                                    color: AppColors.boxShadowColor,
-                                    spreadRadius: 3,
-                                    blurRadius: 6,
-                                    offset: Offset(0, 0))
-                              ]),
-                          child: Center(
-                            child: PrimaryButton(
-                              text: 'Kostenlos Registrieren',
-                              onPressed: () {},
-                            ),
-                          ),
-                        ),
-                      )
                     ],
                   );
                 } else {
@@ -123,42 +97,43 @@ class BannerWidget extends StatelessWidget {
             ),
           );
         }),
-        Container(
-          height: 67,
-          width: MediaQuery.sizeOf(context).width,
-          padding: const EdgeInsets.symmetric(horizontal: 10),
-          decoration: const BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(12),
-                  bottomRight: Radius.circular(12)),
-              boxShadow: [
-                BoxShadow(
-                    color: AppColors.boxShadowColor,
-                    spreadRadius: 3,
-                    blurRadius: 6,
-                    offset: Offset(0, 0))
-              ]),
-          child: Align(
-            alignment: Alignment.centerRight,
-            child: Text(
-              'Login',
-              style: Theme.of(context)
-                  .textTheme
-                  .bodyMedium!
-                  .copyWith(color: AppColors.secondaryColor),
-            ),
-          ),
-        ),
-        Container(
-          height: 7,
-          decoration: const BoxDecoration(
-              gradient: LinearGradient(
-            colors: [AppColors.secondaryColor, AppColors.primaryColor],
-            begin: Alignment.centerLeft,
-            end: Alignment.centerRight,
-          )),
-        ),
+        // Container(
+        //   height: 67,
+        //   width: MediaQuery.sizeOf(context).width,
+        //   padding: const EdgeInsets.symmetric(horizontal: 10),
+        //   decoration: const BoxDecoration(
+        //       color: Colors.white,
+        //       borderRadius: BorderRadius.only(
+        //           bottomLeft: Radius.circular(12),
+        //           bottomRight: Radius.circular(12)),
+        //       boxShadow: [
+        //         BoxShadow(
+        //             color: AppColors.boxShadowColor,
+        //             spreadRadius: 3,
+        //             blurRadius: 1,
+        //             offset: Offset(0, 0))
+        //       ]),
+        //   child: Align(
+        //     alignment: Alignment.centerRight,
+        //     child: Text(
+        //       'Login',
+        //       textAlign: TextAlign.center,
+        //       style: Theme.of(context)
+        //           .textTheme
+        //           .bodyMedium!
+        //           .copyWith(color: AppColors.secondaryColor),
+        //     ),
+        //   ),
+        // ),
+        // Container(
+        //   height: 7,
+        //   decoration: const BoxDecoration(
+        //       gradient: LinearGradient(
+        //     colors: [AppColors.secondaryColor, AppColors.primaryColor],
+        //     begin: Alignment.centerLeft,
+        //     end: Alignment.centerRight,
+        //   )),
+        // ),
       ],
     );
   }
