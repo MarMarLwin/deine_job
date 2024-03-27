@@ -1,6 +1,7 @@
 import 'package:deine_job/constants/app_colors.dart';
 import 'package:deine_job/features/home/presentation/home_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,6 +19,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
         primarySwatch: Colors.grey,
+        textTheme: GoogleFonts.latoTextTheme(Theme.of(context).textTheme
+            // If this is not set, then ThemeData.light().textTheme is used.
+            ),
         appBarTheme: const AppBarTheme(
           backgroundColor: AppColors.primaryColor,
           foregroundColor: Colors.white,

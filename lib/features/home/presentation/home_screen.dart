@@ -1,10 +1,12 @@
 import 'package:deine_job/common_widgets/app_bar.dart';
 import 'package:deine_job/common_widgets/bottom_bar.dart';
+import 'package:deine_job/constants/app_sizes.dart';
 import 'package:deine_job/constants/breakpoints.dart';
 import 'package:deine_job/features/home/presentation/banner_widget.dart';
 import 'package:deine_job/features/home/presentation/first_step_widget.dart';
+import 'package:deine_job/features/home/presentation/painter/steps_painter.dart';
 import 'package:deine_job/features/home/presentation/second_step_widget.dart';
-import 'package:deine_job/features/home/presentation/steps_widget.dart';
+import 'package:deine_job/common_widgets/steps_widget.dart';
 import 'package:deine_job/features/home/presentation/third_step_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -45,6 +47,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context, constraint) {
       return Scaffold(
+        backgroundColor: Colors.white,
         appBar: CustomAppBar(
           isWebScrolled:
               isWebScrolled && !(constraint.maxWidth < Breakpoint.desktop),
@@ -53,15 +56,25 @@ class _HomeScreenState extends State<HomeScreen> {
             constraint.maxWidth < Breakpoint.desktop ? const BottomBar() : null,
         body: CustomScrollView(
           controller: _scrollController,
-          slivers: const [
+          slivers: [
             SliverToBoxAdapter(
                 child: Column(
               children: [
-                BannerWidget(),
-                StepsWidget(),
-                FirstStep(),
-                SecondStep(),
-                ThirdStep()
+                const BannerWidget(),
+                const StepsWidget(),
+                CustomPaint(
+                  painter: StepsPainter(),
+                  child: const Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      FirstStep(),
+                      gapH24,
+                      SecondStep(),
+                      gapH24,
+                      ThirdStep()
+                    ],
+                  ),
+                ),
               ],
             ))
           ],
