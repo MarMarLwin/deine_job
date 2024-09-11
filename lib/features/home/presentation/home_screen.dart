@@ -39,7 +39,6 @@ class _HomeScreenState extends State<HomeScreen> {
           isWebScrolled = false;
         });
       }
-      debugPrint('scroll index $index');
     });
   }
 

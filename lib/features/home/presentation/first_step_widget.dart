@@ -25,25 +25,49 @@ class FirstStep extends StatelessWidget {
                 fit: BoxFit.contain,
               ),
             ),
-            Text.rich(TextSpan(
-                children: [
+            // Text.rich(
+            //     softWrap: false,
+            //     TextSpan(
+            //         children: [
+            //           TextSpan(
+
+            //               text:
+            //                   'Erstellen dein Lebenslauf sdfasdfasdasd asdfads sdfasd dsf',
+            //               style: Theme.of(context)
+            //                   .textTheme
+            //                   .titleLarge!
+            //                   .copyWith(color: Colors.grey, fontSize: 15))
+            //         ],
+            //         text: '1.',
+            //         style: Theme.of(context)
+            //             .textTheme
+            //             .titleLarge!
+            //             .copyWith(color: Colors.grey, fontSize: 130))),
+            RichText(
+                softWrap: false,
+                text: TextSpan(children: <InlineSpan>[
                   TextSpan(
-                      text: 'Erstellen dein Lebenslauf',
+                      text: '1.',
                       style: Theme.of(context)
                           .textTheme
                           .titleLarge!
-                          .copyWith(color: Colors.grey, fontSize: 15))
-                ],
-                text: '1.',
-                style: Theme.of(context)
-                    .textTheme
-                    .titleLarge!
-                    .copyWith(color: Colors.grey, fontSize: 130)))
+                          .copyWith(color: Colors.grey, fontSize: 130)),
+                  WidgetSpan(
+                    alignment: PlaceholderAlignment.middle,
+                    child: Text(
+                        'Erstellen dein Lebenslauf dsf sdf sdkjfid josdi jjkoj sdf ;s sdfas sdfs sdfa ',
+                        softWrap: true,
+                        style: Theme.of(context)
+                            .textTheme
+                            .titleLarge!
+                            .copyWith(color: Colors.grey, fontSize: 15)),
+                  )
+                ]))
           ],
         );
       } else {
         return CustomPaint(
-          painter: RightArrowPainter(),
+          // painter: RightArrowPainter(),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
