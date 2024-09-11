@@ -1,6 +1,5 @@
 import 'package:deine_job/constants/breakpoints.dart';
 import 'package:deine_job/features/home/presentation/painter/circle_painter.dart';
-import 'package:deine_job/features/home/presentation/painter/right_arrow_painter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
